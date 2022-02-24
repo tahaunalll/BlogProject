@@ -16,5 +16,8 @@ namespace EntityLayer.Concrete
         
         //Aktif-pasif
         public bool CategoryStatus { get; set; }
+
+        //ilişki oluşturma : Key 4 Infrastructure @Blog
+        public List<Blog> Blogs { get; set; }
     }
 }

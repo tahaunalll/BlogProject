@@ -18,5 +18,12 @@ namespace EntityLayer.Concrete
         public DateTime BlogCreateDate { get; set; }
         public bool BlogStatus { get; set; }
 
+        //ilişki oluşturma : eternal usage
+        public int CategoryID { get; set; }
+        public Category Category { get; set; }
+
+        //İlişki oluşturma : key 4 infrastructure @Comment
+        public List<Comment> Comments { get; set; }
+
     }
 }

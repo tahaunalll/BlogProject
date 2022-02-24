@@ -17,5 +17,10 @@ namespace EntityLayer.Concrete
         public DateTime CommentDate { get; set; }
         public bool CommentStatus { get; set; }
 
+        //ilişki oluşturma --> eternal usage
+
+        public int BlogID { get; set; }
+        public Blog Blog { get; set; }
+
     }
 }
