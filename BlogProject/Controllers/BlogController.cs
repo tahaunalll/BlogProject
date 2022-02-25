@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.ADO;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,7 @@ namespace BlogProject.Controllers
 {
     public class BlogController : Controller
     {
+        //BlogManager blogManager = new BlogManager(new ADOBlogRepository());
         BlogManager blogManager = new BlogManager(new EfBlogRepository());
         public IActionResult Index()
         {
