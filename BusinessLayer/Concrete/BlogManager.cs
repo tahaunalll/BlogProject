@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,18 @@ namespace BusinessLayer.Concrete
         public void BlogUpdate(Blog blog)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Blog> GetBlogByID(int id)
+        {
+            //filter yöntemi sadece ef de olduğundan buradan initialize ettim
+            GenericRepository<Blog> gr = new GenericRepository<Blog>();
+            return gr.ListByFilter(x => x.BlogID==id);
+        }
+
+        public List<Blog> GetBlogListWithCategory()
+        {
+            return _blogDal.GetListWithCategory();
         }
 
         public Blog GetById(int id)

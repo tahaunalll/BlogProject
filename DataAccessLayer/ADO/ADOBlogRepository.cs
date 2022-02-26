@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq.Expressions;
 
 namespace DataAccessLayer.ADO
 {
@@ -49,6 +50,13 @@ namespace DataAccessLayer.ADO
             }
             return blogList;
         }
+
+        public List<Blog> GetListWithCategory()
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         public void Update(Blog t)
         {
