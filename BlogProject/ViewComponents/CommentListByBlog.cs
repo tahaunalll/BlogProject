@@ -12,8 +12,10 @@ namespace BlogProject.ViewComponents
     {
         CommentManager cm = new CommentManager(new EfCommentRepository());
         //id değerini almak için @viewbag kullandık --> ~/Views/Blog/BlogReadAll.cshtml
+        //id parametresine verinin nasıl atandığına dikkat et
         public IViewComponentResult Invoke(int id)
         {
+            
             var values = cm.GetCommentByID(id);
             return View(values);
         }

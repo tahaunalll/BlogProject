@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void CommentAdd(Comment comment)
         {
-            throw new NotImplementedException();
+            _commentdal.Create(comment);
         }
 
         public void CommentDelete(Comment comment)
@@ -42,7 +42,7 @@ namespace BusinessLayer.Concrete
         public List<Comment> GetCommentByID(int id)
         {
             GenericRepository<Comment> gr = new GenericRepository<Comment>();
-            return gr.ListByFilter(x => x.CommentID == id);
+            return gr.ListByFilter(x => x.BlogID == id);
         }
 
         public List<Comment> GetList()

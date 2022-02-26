@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +39,14 @@ namespace BlogProject
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //Buradan itibaren:
+
+            //routing yanlıs oldugunuda 404 not found gibi..
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
+
+
+            //Buraya kadar..
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

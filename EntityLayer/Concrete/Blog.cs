@@ -25,5 +25,10 @@ namespace EntityLayer.Concrete
         //İlişki oluşturma : key 4 infrastructure @Comment
         public List<Comment> Comments { get; set; }
 
+        //ilişki oluşturma : etarnal usage
+        public int WriterID { get; set; }
+        public Writer Writer { get; set; }
+
+
     }
 }

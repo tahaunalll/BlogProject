@@ -10,7 +10,7 @@ namespace DataAccessLayer.Abstract
     public interface IBlogDal:IGenericDal<Blog>
     {
         //sadece blog a özgü olan metotlar : 
-        List<Blog> GetListWithCategory();
+        List<Blog> GetBlogListWithCategory();
   
     }
 }

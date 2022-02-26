@@ -32,16 +32,22 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Blog> GetBlogByID(int id)
+        public List<Blog> GetBlogListByID(int id)
         {
             //filter yöntemi sadece ef de olduğundan buradan initialize ettim
             GenericRepository<Blog> gr = new GenericRepository<Blog>();
             return gr.ListByFilter(x => x.BlogID==id);
         }
 
+        public List<Blog> GetBlogListByWriter(int id)
+        {
+            GenericRepository<Blog> gr = new GenericRepository<Blog>();
+            return gr.ListByFilter(x => x.WriterID == id);
+        }
+
         public List<Blog> GetBlogListWithCategory()
         {
-            return _blogDal.GetListWithCategory();
+            return _blogDal.GetBlogListWithCategory();
         }
 
         public Blog GetById(int id)

@@ -24,6 +24,11 @@ namespace DataAccessLayer.ADO
             throw new NotImplementedException();
         }
 
+        public List<Blog> GetBlogListWithCategory()
+        {
+            throw new NotImplementedException();
+        }
+
         public Blog GetById(int id)
         {
             throw new NotImplementedException();
@@ -51,10 +56,7 @@ namespace DataAccessLayer.ADO
             return blogList;
         }
 
-        public List<Blog> GetListWithCategory()
-        {
-            throw new NotImplementedException();
-        }
+    
 
 
 
