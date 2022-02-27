@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.ADO;
 using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace BlogProject.Controllers
     {
         //BlogManager blogManager = new BlogManager(new ADOBlogRepository());
         BlogManager blogManager = new BlogManager(new EfBlogRepository());
+        
+        [AllowAnonymous]
         public IActionResult Index()
         {
             //var values = blogManager.GetList();
@@ -27,5 +30,7 @@ namespace BlogProject.Controllers
             var values = blogManager.GetBlogListByID(id);
             return View(values);
         }
+
+         
     }
 }

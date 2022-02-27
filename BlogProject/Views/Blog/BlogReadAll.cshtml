@@ -79,10 +79,12 @@
                         <div class="tech-btm">
                             <img src="~/CoreBlogTema/web/images/banner1.jpg" class="img-fluid" alt="">
                         </div>
+                        <!--Partial'ı footer alanında da kullanabilmek için h4 tagini partialdan çıkarttık renk sorunları vs.-->
+                        <h4>Haber Bültenine Abone Ol</h4>
                         @await Html.PartialAsync("~/Views/Newsletter/SubscribeMail.cshtml")
 
-                        @await Component.InvokeAsync("CategoryList") 
-                        
+                        @await Component.InvokeAsync("CategoryList")
+
                         @await Component.InvokeAsync("WriterLastBlog")
                         <div class="single-gd my-5 tech-btm">
                             <h4>Our Progress</h4>
