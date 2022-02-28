@@ -18,20 +18,6 @@ namespace BusinessLayer.Concrete
             _commentdal = commentdal;
         }
 
-        public void CommentAdd(Comment comment)
-        {
-            _commentdal.Create(comment);
-        }
-
-        public void CommentDelete(Comment comment)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CommentUpdate(Comment comment)
-        {
-            throw new NotImplementedException();
-        }
 
         public Comment GetById(int id)
         {
@@ -39,13 +25,28 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Comment> GetCommentByID(int id)
+        public List<Comment> GetCommentByBlogID(int id)
         {
             GenericRepository<Comment> gr = new GenericRepository<Comment>();
             return gr.ListByFilter(x => x.BlogID == id);
         }
 
         public List<Comment> GetList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TAdd(Comment t)
+        {
+            _commentdal.Create(t);
+        }
+
+        public void TDelete(Comment t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(Comment t)
         {
             throw new NotImplementedException();
         }

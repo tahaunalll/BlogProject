@@ -24,7 +24,7 @@ namespace BlogProject.Controllers
             //statik veri girişi yapıyoruz:
             contact.ContactDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             contact.ContactStatus = true;
-            cm.ContactAdd(contact);
+            cm.TAdd(contact);
             //Action - Controller
             return RedirectToAction("Index","Blog");
         }

@@ -34,7 +34,7 @@ namespace BlogProject.Controllers
             {
                 writer.WriterStatus = true;
                 writer.WriterAbout = "test";
-                wm.WriterAdd(writer);
+                wm.TAdd(writer);
             }
             else
             {

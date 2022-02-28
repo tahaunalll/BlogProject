@@ -14,7 +14,7 @@ namespace BlogProject.ViewComponents.Blog
 
         public IViewComponentResult Invoke()
         {
-            var values = bm.GetBlogListByWriter(1);
+            var values = bm.GetBlogListByWriterID(1);
             return View(values);
 
         }

@@ -17,29 +17,15 @@ namespace BusinessLayer.Concrete
         {
             _blogDal = blogDal;
         }
-        public void BlogAdd(Blog blog)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void BlogDelete(Blog blog)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void BlogUpdate(Blog blog)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Blog> GetBlogListByID(int id)
+        
+        public List<Blog> GetBlogListByBlogID(int id)
         {
             //filter yöntemi sadece ef de olduğundan buradan initialize ettim
             GenericRepository<Blog> gr = new GenericRepository<Blog>();
             return gr.ListByFilter(x => x.BlogID==id);
         }
 
-        public List<Blog> GetBlogListByWriter(int id)
+        public List<Blog> GetBlogListByWriterID(int id)
         {
             GenericRepository<Blog> gr = new GenericRepository<Blog>();
             return gr.ListByFilter(x => x.WriterID == id);
@@ -63,6 +49,21 @@ namespace BusinessLayer.Concrete
         {
             //kontrol et
             return _blogDal.GetListAll().Take(3).ToList();
+        }
+
+        public void TAdd(Blog t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TDelete(Blog t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(Blog t)
+        {
+            throw new NotImplementedException();
         }
     }
 }

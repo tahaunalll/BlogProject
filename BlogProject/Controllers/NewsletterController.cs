@@ -23,7 +23,7 @@ namespace BlogProject.Controllers
         public PartialViewResult SubscribeMail(Newsletter newsletter)
         {
             newsletter.MailStatus = true;
-            newsletterManager.AddNewsletter(newsletter);
+            newsletterManager.TAdd(newsletter);
             return PartialView();
         }
     }

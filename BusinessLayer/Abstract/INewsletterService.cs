@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface INewsletterService
+    public interface INewsletterService:IGenericService<Newsletter>
     {
         //yeni haber bülteni eklemek için
-        void AddNewsletter(Newsletter newsletter);
 
     }
 }
