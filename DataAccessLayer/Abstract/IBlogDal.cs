@@ -11,6 +11,7 @@ namespace DataAccessLayer.Abstract
     {
         //sadece blog a özgü olan metotlar : 
         List<Blog> GetBlogListWithCategory();
+        List<Blog> GetBlogListWithCategoryByWriter(int id);
   
     }
 }

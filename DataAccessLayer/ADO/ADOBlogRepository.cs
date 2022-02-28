@@ -29,6 +29,11 @@ namespace DataAccessLayer.ADO
             throw new NotImplementedException();
         }
 
+        public List<Blog> GetBlogListWithCategoryByWriter(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Blog GetById(int id)
         {
             throw new NotImplementedException();
