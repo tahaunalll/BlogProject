@@ -33,5 +33,13 @@ namespace DataAccessLayer.EntityFramework
 
             }
         }
+
+        public Blog GetBlogWithCategoryByBlogID(int id)
+        {
+            using (var c = new Context())
+            {
+                return c.Blogs.Include(x => x.Category).Where(x=>x.CategoryID==id).FirstOrDefault();
+            }
+        }
     }
 }

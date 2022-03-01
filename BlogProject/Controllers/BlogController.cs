@@ -18,7 +18,9 @@ namespace BlogProject.Controllers
     {
         //BlogManager blogManager = new BlogManager(new ADOBlogRepository());
         BlogManager blogManager = new BlogManager(new EfBlogRepository());
-        
+
+        #region Listing Pages
+
         [AllowAnonymous]
         public IActionResult Index()
         {
@@ -41,7 +43,8 @@ namespace BlogProject.Controllers
             var values = this.GetBlogListWithCategoryByWriterID(1);
             return View(values);
         }
-
+        #endregion
+        #region BlogAdd
         [HttpGet]
         public IActionResult BlogAdd()
         {
@@ -77,11 +80,53 @@ namespace BlogProject.Controllers
             }
             return RedirectToAction("BlogListByWriter","Blog");
         }
-
+        #endregion
+        #region GetBlogListWithCategoryByWriterID : return List<Blog>
         public List<Blog> GetBlogListWithCategoryByWriterID (int id)
         {
             return blogManager.GetBlogListWithCategoryByWriterID(id);
         }
+        #endregion   
+        #region Delete Blog
+        public IActionResult DeleteBlog(int id)
+        {
+            //ilk başta silinecek olan nesneyi seçiyoruz.
+            var blogValue = blogManager.GetById(id);
+            blogManager.TDelete(blogValue);
+            return RedirectToAction("BlogListByWriter","Blog");
+        }
+        #endregion
+
+        #region EditBlog
+        [HttpGet]
+        public IActionResult EditBlog(int id)
+        {
+            CategoryManager cm = new CategoryManager(new EfCategoryRepository());
+            var blogValue = blogManager.GetById(id);
+
+            //SelectListItem oluşturma
+            List<SelectListItem> categoryValues = (from x in cm.GetList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.CategoryName,
+                                                       Value = x.CategoryID.ToString()
+                                                   }).ToList();
+            //ViewBag önemli ! view-controller baglama
+            ViewBag.t = categoryValues;
+            return View(blogValue);
+        }
+
+        [HttpPost]
+        public IActionResult EditBlog(Blog blog)
+        {
+            blog.BlogStatus = true;
+            blog.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            //hatadan çıkmak için statik veri ataması
+            blog.WriterID = 1;
+            blogManager.TUpdate(blog);
+            return RedirectToAction("BlogListByWriter", "Blog");
+        }
+        #endregion
 
     }
 }
