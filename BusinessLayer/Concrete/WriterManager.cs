@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,12 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<Writer> GetWriterByID(int id)
+        {
+            GenericRepository<Writer> gr = new GenericRepository<Writer>();
+            return gr.ListByFilter(x => x.WriterID == id);
+        }
+
         public void TAdd(Writer t)
         {
             _writerdal.Create(t);
@@ -34,12 +41,12 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Writer t)
         {
-            throw new NotImplementedException();
+            _writerdal.Delete(t);
         }
 
         public void TUpdate(Writer t)
         {
-            throw new NotImplementedException();
+            _writerdal.Update(t);
         }
 
         

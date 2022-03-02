@@ -22,5 +22,7 @@ namespace EntityLayer.Concrete
         public int BlogID { get; set; }
         public Blog Blog { get; set; }
 
+        public int BlogRating { get; set; }
+
     }
 }

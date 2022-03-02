@@ -9,5 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IWriterService : IGenericService<Writer>
     {
+        //Daha sonra bu fonksiyon adını düzelt
+         List<Writer> GetWriterByID(int id);
     }
 }
