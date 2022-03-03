@@ -39,7 +39,7 @@
                         <h4 class="font-weight-normal mb-3">
                             Toplam Blog Sayısı <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                         </h4>
-                        <h2 class="mb-5">0</h2>
+                        <h2 class="mb-5">@ViewBag.dashBlogsCount</h2>
                         <h6 class="card-text">BlogProject</h6>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                         <h4 class="font-weight-normal mb-3">
                             Sizin Blog Sayınız <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                         </h4>
-                        <h2 class="mb-5">0</h2>
+                        <h2 class="mb-5">@ViewBag.dashcontBlogsCountByWriter</h2>
                         <h6 class="card-text">BlogProject</h6>
                     </div>
                 </div>
@@ -61,9 +61,9 @@
                     <div class="card-body">
                         <img src="~/webwriter/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                         <h4 class="font-weight-normal mb-3">
-                            Son 7 gündeki blog sayısı <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                            Toplam Kategori Sayısı <i class="mdi mdi-diamond mdi-24px float-right"></i>
                         </h4>
-                        <h2 class="mb-5">0</h2>
+                        <h2 class="mb-5">@ViewBag.dashcontCategoriesCount</h2>
                         <h6 class="card-text">BlogProject</h6>
                     </div>
                 </div>
